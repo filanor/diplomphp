@@ -1,0 +1,66 @@
+2019-04-25 22:44:12 [::1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/index". in /Users/filanor/Обучение/PHP/diplom/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /Users/filanor/Обучение/PHP/diplom/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('site/index', Array)
+#1 /Users/filanor/Обучение/PHP/diplom/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/filanor/Обучение/PHP/diplom/web/index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /Users/filanor/Обучение/PHP/diplom/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/filanor/Обучение/PHP/diplom/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/filanor/Обучение/PHP/diplom/web/index.php(12): yii\base\Application->run()
+#2 {main}
+2019-04-25 22:44:12 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '090n6pd9kc7ibo1geggkq766cu'
+    'io' => 'jRWlshdtsNifgUIDAAAW'
+    '_csrf' => '67c6edd7876821a9ce638d1b0626403cee8aac0ef7de87ee080c2efbb34badada:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"T_h4XqaUruKVOOGC1PoqjfamccgaR_Ud\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'luymneb'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost:8888'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://localhost:8888/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'PHPSESSID=090n6pd9kc7ibo1geggkq766cu; io=jRWlshdtsNifgUIDAAAW; _csrf=67c6edd7876821a9ce638d1b0626403cee8aac0ef7de87ee080c2efbb34badada%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22T_h4XqaUruKVOOGC1PoqjfamccgaR_Ud%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.2.34 (Unix) mod_wsgi/3.5 Python/2.7.13 PHP/7.2.10 mod_ssl/2.2.34 OpenSSL/1.0.2o DAV/2 mod_fastcgi/mod_fastcgi-SNAP-0910052141 mod_perl/2.0.9 Perl/v5.24.0'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8888'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/filanor/Обучение/PHP/diplom'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/filanor/Обучение/PHP/diplom/web/index.php'
+    'REMOTE_PORT' => '62115'
+    'REDIRECT_URL' => '/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1556232251.997
+    'REQUEST_TIME' => 1556232251
+    'argv' => []
+    'argc' => 0
+]
