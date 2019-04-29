@@ -7,6 +7,7 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'language' => 'ru',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
@@ -33,7 +34,11 @@ $config = [
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
             'useFileTransport' => true,
-            'viewPath' => '@app/mail/layouts',
+            'viewPath' => '@app/mail/',
+            'messageConfig' => [
+                'charset' => 'UTF-8',
+                'from' => ['robot@filanor.ru' => 'filanor.com'],
+            ],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -59,6 +64,17 @@ $config = [
 
             ],
         ],
+        'assetManager' => [
+            'bundles' => [
+                'yii\web\JqueryAsset' => [
+                    'sourcePath' => null,
+                    'js' => [
+                        '/js/jquery-3.2.1.min.js'
+                    ]
+                ],
+            ],
+        ],
+
 
     ],
     'params' => $params,

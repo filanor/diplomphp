@@ -163,7 +163,9 @@ use yii\helpers\Url;
                 <div class="product_grid">
 
                     <!-- Product -->
-                    <?php foreach ($products as $prd) {?>
+                    <?php foreach ($products as $prd) {
+
+                        ?>
 
                     <div class="product">
                         <a href = "<?=Url::to(['product/'.$prd['id']])?>" class="product_image"><img src="/images/<?= $prd['img']?>" alt=""></a>

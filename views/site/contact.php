@@ -46,9 +46,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="get_in_touch">
                     <div class="section_title">Будь на связи</div>
                     <div class="section_subtitle">напиши нам</div>
+                    <div class="res_container" style = "width: 100%; line-height: 40px; font-size: 30px; text-align: center;"></div>
                     <div class="contact_form_container">
                         <!--<form action="#" id="contact_form" class="contact_form">-->
-                        <?php $form = ActiveForm::begin(['id' => 'contact-form', 'class' => 'contact-form']); ?>
+                        <?php
+
+                        $form = ActiveForm::begin(['id' => 'contact-form', 'class' => 'contact-form', 'action'=>['']]); ?>
                             <div class="row">
                                 <?= $form->field($model, 'firstName', ['options' => ['class'=>'col-xl-6']])->textInput(['autofocus' => true, 'class'=>'contact_input'])?>
                                 <?= $form->field($model, 'lastName', ['options' => ['class'=>'col-xl-6 last_name_col']])->textInput(['autofocus' => true, 'class'=>'contact_input']) ?>
@@ -114,22 +117,34 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php
 
 
-$this->registerJS("$('.contact_button').on('click', function(e) {
+$contact = <<< JS
+    $(document).on('click', '.contact_button', function(e){
         e.preventDefault();
-        // $.ajax({
-        //     url: '../site/contact',
-        //     method: 'POST',
-        //    
-        //     success: function(res){
-		// 		console.log(res);
-		// 		alert();
-		//	
-		// 	},
-		// 	error: function(err){
-		// 		console.log('нет');
-		// 	}
-        // });
-    });");
+       let form = $(this).parents('#contact-form');
+       //console.log(form.attr('method'));
+       
+       $.ajax({
+            type: 'POST',
+            url: '/site/contact',
+            data: form.serializeArray(),
+            success: function(res){
+                if (res.validation) {
+                    console.log(res.validation);
+                    form.yiiActiveForm('updateMessages', res.validation, true);
+                } else{
+                    $('.contact_input').val('');
+                    $('.res_container').text(res);
+                }
+                },
+            error: function(err){
+                $('.res_container').text('Ошибка. Попробуйте позже.');
+            },
+        
+       });
+    });
+JS;
+
+$this->registerJS($contact);
 
 
 ?>

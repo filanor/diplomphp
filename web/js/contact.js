@@ -42,7 +42,7 @@ $(document).ready(function()
 
 	initSearch();
 	initMenu();
-	initGoogleMap();
+	//initGoogleMap();
 
 	/* 
 
@@ -180,7 +180,7 @@ $(document).ready(function()
 	5. Init Google Map
 
 	*/
-
+/*
 	function initGoogleMap()
 	{
 		var myLatlng = new google.maps.LatLng(34.043238,-118.258338);
@@ -319,4 +319,6 @@ $(document).ready(function()
 		});
 	}
 
+
+*/
 });

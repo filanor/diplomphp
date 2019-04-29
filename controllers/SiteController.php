@@ -12,6 +12,7 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Product;
 use app\models\Category;
+use yii\helpers\Html;
 
 class SiteController extends Controller
 {
@@ -80,18 +81,35 @@ class SiteController extends Controller
     public function actionContact()
     {
 
-        $cats = new Category();
-        $cats = $cats->getCategories();
-       // return $this->render('contact', compact('cats'));
-
         $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
+        //если ajax
+        if (Yii::$app->request->isAjax) {
 
-            echo "Ваше обращение успешно отправленно!";
-            //return $this->refresh();
+            if ($model->load(Yii::$app->request->post()) && $model->contact()) {
+                Yii::$app->session->setFlash('contactFormSubmitted');
+                return "Ваше обращение успешно отправленно!";
+
+            }
+            $result = [];
+            foreach ($model->getErrors() as $attr => $errors){
+                $result[Html::getInputId($model, $attr)] = $errors;
+            }
+            return $this->asJson(['validation' => $result]);
+
+
+
+            //если вдруг не ajax
+        } else{
+            if ($model->load(Yii::$app->request->post()) && $model->contact()) {
+                Yii::$app->session->setFlash('contactFormSubmitted');
+
+                return "Ваше обращение успешно отправленно!";
+
+                //return $this->refresh();
+            }
+            return $this->render('contact', compact('model', 'cats'));
         }
-        return $this->render('contact', compact('model', 'cats'));
+
 
     }
 

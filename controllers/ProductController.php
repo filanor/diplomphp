@@ -23,7 +23,10 @@ class ProductController extends Controller
         $cat = new Category();
         $cat = $cat->getOneCategory($item['category']);
         return $this->render('view', compact('item', 'cat'));
+    }
 
+    public function smallView($prd){
+        return $this->render('smallView', compact('prd'));
     }
 
 }
