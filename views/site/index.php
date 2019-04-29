@@ -67,9 +67,9 @@ use yii\helpers\Url;
                         <div class="row">
                             <div class="col">
                                 <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
-                                    <div class="home_slider_title">A new Online Shop experience.</div>
-                                    <div class="home_slider_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viverra velit venenatis fermentum luctus.</div>
-                                    <div class="button button_light home_button"><a href="/">Shop Now</a></div>
+                                    <div class="home_slider_title">Незабываемый экспириенс от online шопинга.</div>
+                                    <div class="home_slider_subtitle">С нашим сайтом ты получишь незабываемые ощущения от online шопинга.</div>
+                                    <div class="button button_light home_button"><a href="<?= Url::to(['/site/category'])?>">Го шопить</a></div>
                                 </div>
                             </div>
                         </div>
@@ -85,9 +85,9 @@ use yii\helpers\Url;
                         <div class="row">
                             <div class="col">
                                 <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
-                                    <div class="home_slider_title">A new Online Shop experience.</div>
-                                    <div class="home_slider_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viverra velit venenatis fermentum luctus.</div>
-                                    <div class="button button_light home_button"><a href="/">Shop Now</a></div>
+                                    <div class="home_slider_title">Незабываемый экспириенс от online шопинга.</div>
+                                    <div class="home_slider_subtitle">С нашим сайтом ты получишь незабываемые ощущения от online шопинга.</div>
+                                    <div class="button button_light home_button"><a href="<?= Url::to(['/site/category'])?>">Кликай сюда</a></div>
                                 </div>
                             </div>
                         </div>
@@ -103,9 +103,9 @@ use yii\helpers\Url;
                         <div class="row">
                             <div class="col">
                                 <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
-                                    <div class="home_slider_title">A new Online Shop experience.</div>
-                                    <div class="home_slider_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viverra velit venenatis fermentum luctus.</div>
-                                    <div class="button button_light home_button"><a href="/">Shop Now</a></div>
+                                    <div class="home_slider_title">Незабываемый экспириенс от online шопинга.</div>
+                                    <div class="home_slider_subtitle">С нашим сайтом ты получишь незабываемые ощущения от online шопинга.</div>
+                                    <div class="button button_light home_button"><a href="<?= Url::to(['/site/category'])?>">Не веришь?</a></div>
                                 </div>
                             </div>
                         </div>

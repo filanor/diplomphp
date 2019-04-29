@@ -155,7 +155,9 @@ class SiteController extends Controller
      */
     public function actionCategory()
     {
-        return $this->render('category');
+        $categories = new Category();
+        $categories = $categories->getCategories();
+        return $this->render('category', compact('categories'));
     }
 
     public function actionSubscribe($email)
