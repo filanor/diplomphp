@@ -79,9 +79,10 @@ AppAsset::register($this);
                 <div class="row">
                     <div class="col">
                         <div class="search_panel_content d-flex flex-row align-items-center justify-content-end">
-                            <form action="#">
+                            <form action="<?= Url::to(['/product/search'])?>" class = "search_form" method="get">
                                 <input type="text" class="search_input" placeholder="Search" required="required">
                             </form>
+                            <div class = "search_items_block"></div>
                         </div>
                     </div>
                 </div>
@@ -100,51 +101,14 @@ AppAsset::register($this);
     </header>
 
 
-    <!-- Menu -->
 
-    <div class="menu menu_mm trans_300">
-        <div class="menu_container menu_mm">
-            <div class="page_menu_content">
 
-                <div class="page_menu_search menu_mm">
-                    <form action="#">
-                        <input type="search" required="required" class="page_menu_search_input menu_mm" placeholder="Search for products...">
-                    </form>
-                </div>
-                <ul class="page_menu_nav menu_mm">
-                    <li class="page_menu_item menu_mm">
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li class="page_menu_item has-children menu_mm">
-                        <a href="categories.html">Categories<i class="fa fa-angle-down"></i></a>
-                        <ul class="page_menu_selection menu_mm">
-                            <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
-                            <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
-                            <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
-                            <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
-                        </ul>
-                    </li>
-                    <li class="page_menu_item menu_mm"><a href="contact.html">Contact<i class="fa fa-angle-down"></i></a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="menu_close"><i class="fa fa-times" aria-hidden="true"></i></div>
-
-        <div class="menu_social">
-            <ul>
-                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-            </ul>
-        </div>
-    </div>
+    <div class = "content">
 
 
 
 <?= $content ?>
-
+    </div>
 
 
 
@@ -175,6 +139,25 @@ AppAsset::register($this);
     </div>
 </footer>
 </div>
+<?php
+$search = <<< JS
+			var search = $('.search');
+			var panel = $('.search_panel');
+
+			search.on('click', function()
+			{
+				panel.toggleClass('active');
+			});
+			
+	
+JS;
+
+$this->registerJs($search);
+?>
+
+
+
+
 <?php $this->endBody() ?>
 </body>
 </html>

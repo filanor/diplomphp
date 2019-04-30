@@ -45,7 +45,7 @@
            data: {email: email},
            method: 'GET',
            success: function(res){
-               console.log("ура");
+               $('.newsletter_text').css('font-size', '20px').text('Ссылка была отправлена вам на почту.')
                console.log(res);
            },
            error: function(){

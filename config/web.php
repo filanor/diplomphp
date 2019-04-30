@@ -60,6 +60,8 @@ $config = [
                 '<controller>/<action>/<Id>' => '<controller>/<action>',
                 'category/<cat>' => 'category/view',
                 'product/<id>' => 'product/view',
+                 'product/search/' => 'product/search'
+
 
 
             ],

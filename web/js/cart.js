@@ -39,7 +39,7 @@ $(document).ready(function()
 		setHeader();
 	});
 
-	initSearch();
+
 	initMenu();
 	initQuantity();
 	initTotalPrice();
@@ -71,19 +71,7 @@ $(document).ready(function()
 
 	*/
 
-	function initSearch()
-	{
-		if($('.search').length && $('.search_panel').length)
-		{
-			var search = $('.search');
-			var panel = $('.search_panel');
 
-			search.on('click', function()
-			{
-				panel.toggleClass('active');
-			});
-		}
-	}
 
 	/* 
 

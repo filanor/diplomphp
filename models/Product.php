@@ -41,4 +41,9 @@ class Product extends ActiveRecord
         $item = Product::find()->where(['id'=>$id])->one();
         return $item;
     }
+
+    public function search($str) {
+        $searchResults = Product::find()->where(['like', 'item', $str])->orWhere(['like', 'about', $str])->asArray()->all();
+        return $searchResults;
+    }
 }

@@ -23,8 +23,8 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="home_content">
                             <div class="breadcrumbs">
                                 <ul>
-                                    <li><a href="/">Home</a></li>
-                                    <li>Contact</li>
+                                    <li><a href="/">Главная</a></li>
+                                    <li>Свяжитесь с нами</li>
                                 </ul>
                             </div>
                         </div>

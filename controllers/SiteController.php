@@ -162,12 +162,19 @@ class SiteController extends Controller
 
     public function actionSubscribe($email)
     {
-        $sub = new Subscribe();
-        $sub->newSubscribe($email);
+        $get = Yii::$app->request->get();
+        if(isset($get['token']))
+        {
+            $sub = new Subscribe();
+            $res = $sub->subscribe($get['email'], $get['token']);
+            return $this->render('subscribe', compact('res'));
+
+        } else{
+            $sub = new Subscribe();
+            $sub->newSubscribe($email);
+        }
+
     }
 
-    public function actionSubscribeCheck()
-    {
 
-    }
 }

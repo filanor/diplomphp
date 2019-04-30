@@ -39,7 +39,7 @@ $(document).ready(function()
 		setHeader();
 	});
 
-	initSearch();
+
 	initMenu();
 	initIsotope();
 
@@ -63,23 +63,7 @@ $(document).ready(function()
 
 	/* 
 
-	3. Init Search
 
-	*/
-
-	function initSearch()
-	{
-		if($('.search').length && $('.search_panel').length)
-		{
-			var search = $('.search');
-			var panel = $('.search_panel');
-
-			search.on('click', function()
-			{
-				panel.toggleClass('active');
-			});
-		}
-	}
 
 	/* 
 
